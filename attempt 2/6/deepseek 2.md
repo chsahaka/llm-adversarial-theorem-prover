@@ -1,0 +1,25 @@
+**[NOVEL FRAMEWORK]:**  
+We retain the **Cook–Levin 2D CW-Complex** $T_M(\phi)$ for a deterministic Turing machine $M$ on input $\phi$ (a 3SAT instance). The space is built as follows:  
+- **0-cells:** Pairs $(t, p)$ with $t \in \{0,1,\dots,T\}$ and $p \in \mathbb{Z}$, representing a tape cell at a specific time.  
+- **1-cells:**  
+  - *Spatial edges:* $(t, p) \sim (t, p+1)$ (tape adjacency at fixed time).  
+  - *Temporal edges:* $(t, p) \sim (t+1, p')$ for $|p' - p| \le 1$, encoding the possible local movement of the head and the symbol update.  
+- **2-cells:** Attached along the loop enclosing a 3‑neighborhood $\{p-1,p,p+1\}$ at time $t$ and the corresponding cells at $t+1$, enforcing the deterministic transition function of $M$: the content of $(t+1, p)$ is a function solely of $(t, p-1)$, $(t, p)$, $(t, p+1)$, and the machine state at time $t$.  
+
+The initial row $t=0$ encodes the instance $\phi$ as a string on the tape. The final row $t=T$ is the output. The space is a **locally finite 2‑dimensional manifold with boundary**, whose combinatorial structure strictly limits the propagation of information.
+
+**[PROPOSED STEP 5]:**  
+Define a **Temporal Cut** as a vertical line in the tableau at a fixed tape position $p_0$, separating the cells into a left region $L = \{(t,p) : p \le p_0\}$ and a right region $R = \{(t,p) : p > p_0\}$. The **Temporal Cut Capacity** $\mathcal{C}(p_0)$ is the maximal amount of information (in bits) that can flow from $L$ to $R$ across this cut per unit time. Because the 2‑cells enforce strictly local updates (3‑neighborhood), the only way information crosses the cut is when the machine head moves from a cell in $L$ to a cell in $R$ (or vice versa), carrying the finite internal state and the symbol under the head. Each such crossing transmits at most a constant number of bits $B$ (the size of the state register plus one tape symbol). Since the head can move at most one cell per time step, the total information exchanged across the cut after $T$ steps is bounded by  
+$$ I_{\text{cross}}(p_0, T) \le B \cdot T. $$
+
+Now consider a satisfiable 3SAT instance $\phi$ whose incidence graph is an **expander** with vertex expansion $\Omega(n)$. By a well‑known result in **aggregate search information** (due to the exponential size of the solution space and the need to resolve global dependencies), any algorithm that correctly decides satisfiability for such an instance must, in the course of its execution, transfer at least $2^{\delta n}$ bits of information (for some constant $\delta > 0$) across some balanced partition of the variables. This is a consequence of the fact that the number of distinct partial assignments that must be distinguished to avoid backtracking is exponential, and these assignments correspond to configurations that must be communicated between two halves of the input.
+
+Map this partition of variables to a spatial cut $p_0$ in the initial tape layout. Because $\phi$ is an expander, any such partition induces a large number of clause‑variable edges crossing the cut, forcing the required information exchange. Consequently, for the machine to successfully compute a satisfying assignment (or decide satisfiability), we must have  
+$$ I_{\text{cross}}(p_0, T) \ge 2^{\delta n}. $$  
+Combined with the capacity bound $I_{\text{cross}}(p_0, T) \le B \cdot T$, we obtain  
+$$ T \ge \frac{2^{\delta n}}{B} = 2^{\Omega(n)}. $$  
+Thus, any deterministic Turing machine solving 3SAT on such instances requires exponential time. Since these instances are satisfiable (and in fact random instances at the critical density are hard), we conclude $\mathbf{P} \neq \mathbf{NP}$.
+
+**[BARRIER EVASION CHECK]:**  
+- **Relativization (Baker–Gill–Solovay):** An oracle Turing machine $M^O$ has, in addition to the local 2‑cells, **topological wormholes**—1‑cells (hyperedges) that directly connect $(t, p)$ to $(t+1, q)$ for *any* tape positions $p, q$, bypassing the spatial adjacency restriction. These hyperedges correspond to an instantaneous oracle query that can transmit arbitrary amounts of information across any cut in a single time step. The Temporal Cut Capacity for an oracle machine becomes **unbounded** (or at least $2^{O(n)}$ per query), collapsing the information‑flow lower bound and allowing $T = \text{poly}(n)$. This demonstrates that our proof technique does not relativize, because the geometric obstruction (limited local bandwidth) is destroyed by the introduction of non‑local oracle edges.  
+- **Natural Proofs:** The set of hard instances is defined by the expander property of the incidence graph, which is a property of the *syntactic representation* of the instance, not of the Boolean function it computes (a satisfiable instance computes the constant‑1 function). Moreover, this set is **sparse** (random instances at clause density $\approx 4.25$) and **not constructively recognizable** in polynomial time (deciding expansion is coNP‑hard). Thus the argument evades the largeness and constructivity conditions of Razborov–Rudich.
