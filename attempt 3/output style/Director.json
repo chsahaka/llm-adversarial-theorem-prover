@@ -1,0 +1,27 @@
+{
+    "type": "object",
+    "properties": {
+        "current_status_summary": {
+            "type": "string"
+        },
+        "acknowledged_critic_fallacies": {
+            "type": "string"
+        },
+        "alpha_directive": {
+            "type": "string"
+        },
+        "beta_directive": {
+            "type": "string"
+        },
+        "critic_target": {
+            "type": "string"
+        }
+    },
+    "required": [
+        "current_status_summary",
+        "acknowledged_critic_fallacies",
+        "alpha_directive",
+        "beta_directive",
+        "critic_target"
+    ]
+}

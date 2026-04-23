@@ -1,0 +1,26 @@
+{
+    "type": "object",
+    "properties": {
+        "epoch_summary": {
+            "type": "string"
+        },
+        "compressed_graveyard_additions": {
+            "type": "array",
+            "items": {
+                "type": "string"
+            }
+        },
+        "agent_degradation_warning": {
+            "type": "boolean"
+        },
+        "v3_master_directive": {
+            "type": "string"
+        }
+    },
+    "required": [
+        "epoch_summary",
+        "compressed_graveyard_additions",
+        "agent_degradation_warning",
+        "v3_master_directive"
+    ]
+}
