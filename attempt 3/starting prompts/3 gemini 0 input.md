@@ -1,0 +1,1 @@
+ok so i am using the gemini's with google ai studio so i can use structured outputs. can you create prompts for me?

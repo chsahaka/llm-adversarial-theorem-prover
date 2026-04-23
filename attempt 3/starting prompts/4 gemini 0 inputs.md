@@ -1,0 +1,1 @@
+how do i make this run as Efficiently as possible as i keep running out of tokens 

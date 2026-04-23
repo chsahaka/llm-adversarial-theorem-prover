@@ -1,0 +1,27 @@
+{
+    "type": "object",
+    "properties": {
+        "judgment": {
+            "type": "string",
+            "enum": [
+                "ACCEPT",
+                "REJECT"
+            ]
+        },
+        "fallacy_name": {
+            "type": "string"
+        },
+        "attack_vector": {
+            "type": "string"
+        },
+        "director_pivot_advice": {
+            "type": "string"
+        }
+    },
+    "required": [
+        "judgment",
+        "fallacy_name",
+        "attack_vector",
+        "director_pivot_advice"
+    ]
+}

@@ -1,0 +1,19 @@
+{
+    "type": "object",
+    "properties": {
+        "mathematical_rationale": {
+            "type": "string"
+        },
+        "lean_4_code_delta": {
+            "type": "string"
+        },
+        "expected_verifier_state": {
+            "type": "string"
+        }
+    },
+    "required": [
+        "mathematical_rationale",
+        "lean_4_code_delta",
+        "expected_verifier_state"
+    ]
+}

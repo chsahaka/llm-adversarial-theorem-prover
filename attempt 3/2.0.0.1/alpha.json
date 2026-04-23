@@ -1,0 +1,5 @@
+{
+    "mathematical_rationale": "A Turing machine tape bounded to length S over a finite alphabet Γ is mathematically equivalent to a function from the finite index set Fin S to Γ. By the product rule of finite types, the number of distinct tape configurations equals |Γ|^S. This discrete bound quantifies the maximum entropy of the tape under the dyadic precision constraint S, bridging FRSB continuous limits with finite-state hardware.",
+    "lean_4_code_delta": "import Mathlib.Data.Fintype.Card\nimport Mathlib.Data.Fintype.Prod\n\ndef TMTapeConfig (S : ℕ) (Γ : Type) : Type := Fin S → Γ\n\ninstance (S : ℕ) (Γ : Type) [Fintype Γ] : Fintype (TMTapeConfig S Γ) :=\n  Pi.fintype (fun _ => Γ)\n\ntheorem TMTapeConfig_card (S : ℕ) (Γ : Type) [Fintype Γ] :\n    Fintype.card (TMTapeConfig S Γ) = (Fintype.card Γ) ^ S := by\n  rw [Fintype.card_fun, Fintype.card_fin, Finset.prod_const, Finset.card_fin]",
+    "expected_verifier_state": "Definition `TMTapeConfig S Γ` added with `Fintype` instance; theorem `TMTapeConfig_card` proved using `Fintype.card_fun` and `Fintype.card_fin`, establishing the information-theoretic upper bound of (|Γ|)^S configurations."
+}

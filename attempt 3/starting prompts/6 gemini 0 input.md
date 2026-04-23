@@ -1,0 +1,1 @@
+ but i don't see you using the graveyard from before? can you add that too? so that the bots know what NOT to do
