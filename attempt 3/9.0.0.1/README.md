@@ -26,3 +26,10 @@ JSON file format
   "required": ["mathematical_rationale", "lean_4_code_delta", "expected_verifier_state"]
 }
 ```
+
+and then 
+```
+and the nCRITICAL JSON RULE: When writing mathematical symbols or Lean 4 code inside the JSON values, you must use standard LaTeX (e.g., \\rightarrow, \\Omega) or standard ASCII. Do not use raw multi-byte Unicode math characters, as it will corrupt the JSON output.
+```
+
+and then we give it backs it's previous code block so that it knows what the director is tell it.
