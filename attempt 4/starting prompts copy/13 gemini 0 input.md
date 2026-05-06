@@ -1,0 +1,1 @@
+what temps should the model's be?

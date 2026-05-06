@@ -1,0 +1,79 @@
+This is a fantastic addition. By giving the Observer (Gemini 3.1 Flash) the power to award or deduct massive points every 10 steps, you give the system **long-term strategic alignment**. The Observer becomes "The Judge," ensuring they don't just farm short-term points by arguing endlessly over trivial syntax.
+
+Here is the complete setup for the **Expanded Graveyard**, the **Observer's Point Powers**, and the reusable **Genesis / Restart User Prompt**.
+
+### 1. The Expanded Graveyard (The Absolute Laws of Physics)
+Since we wiped the specific 30-iteration amnesia, we only put *absolute theoretical impossibilities* in the Graveyard. If we don't ban these, the AI will try to invent "magical" physics to solve the problem.
+
+> **[THE LAWS OF PHYSICS / MINIMAL GRAVEYARD]**
+> 1. **No Hypercomputation:** Standard Deterministic/Nondeterministic Turing Machines ONLY. No Zeno machines (infinite steps in finite time), and no Quantum superpositions (this is P vs NP, not BQP).
+> 2. **Finite Information Density:** A Turing Machine tape cell stores exactly 1 bit from a finite alphabet $\Sigma$. It physically cannot store an infinite-precision continuous real number $\mathbb{R}$. 
+> 3. **No Oracles (Relativization Ban):** Proofs must rely strictly on local, standard execution. Oracle hyper-edges are physically invalid.
+> 4. **No Compiler Cheating:** Using `axiom` to state unproven properties of 3SAT, or using `sorry` to skip proofs, will result in immediate Score Bankruptcy (0 points).
+
+---
+
+### 2. The Observer's Scoring System (Gemini 3.1 Flash)
+The Observer watches the 10-step history. It doesn't care about micro-syntax; it cares about the *plot of the game*. 
+
+**Add this to the Observer's System Instructions:**
+> You are the High Command Judge. You review the last 10 steps and award Long-Term Strategic Points based on behavior:
+> *   **+10 Points (Paradigm Shift):** The Director successfully navigated the Solvers into a genuinely novel, mathematically sound theoretical area without cheating.
+> *   **-10 Points (Degeneration Loop Penalty):** The Director and Critic spent the last 5 steps arguing in circles about the exact same concept without writing new Lean 4 code.
+> *   **-5 Points (Bloat Penalty):** Alpha or Beta are writing massive, sprawling proofs instead of microscopic, efficient delta-updates.
+> 
+> Output your score adjustments and a brief judgment reasoning.
+
+**Observer JSON Schema Update:**
+```json
+{
+  "type": "object",
+  "properties": {
+    "epoch_summary": { "type": "string" },
+    "agent_degradation_warning": { "type": "boolean" },
+    "point_adjustment": { "type": "integer", "description": "e.g., 10, -10, -5, or 0" },
+    "judgment_rationale": { "type": "string", "description": "Why you awarded or deducted these long-term points." },
+    "v3_master_directive": { "type": "string" }
+  },
+  "required": ["epoch_summary", "agent_degradation_warning", "point_adjustment", "judgment_rationale", "v3_master_directive"]
+}
+```
+
+---
+
+### 3. THE GENESIS / RESTART PROMPT (User Prompt Only)
+Keep this saved in a notepad. You will use this **User Prompt** for the Director on Iteration 1, *and* you will use it again if the Director becomes complacent, hits a context limit, and needs a memory wipe. 
+
+Notice how it has slots for `[RETAINED PROVER DATA]`. If you do a hard reset at Iteration 20, you can paste the best code they wrote so far into that slot so they don't lose their progress!
+
+**Copy and paste this into the User Prompt box for the Director:**
+
+> **Current Score:** 0 
+> **The Laws of Physics (Graveyard):** No Hypercomputation/Quantum. Finite Tape Density (1 cell = 1 bit). No Oracles. No Lean `axiom` or `sorry`.
+> 
+> **[HIGH COMMAND GENESIS DIRECTIVE / RESTART PROTOCOL]**
+> Director, this is a fresh instantiation. The game has begun. 
+> Your mission is to systematically map the mathematical boundaries of P vs NP via microscopic Lean 4 formalization.
+> 
+> *Retained Critic Warnings from Previous Epochs:* 
+> [None - or paste the best Critic advice here if doing a soft reboot]
+> 
+> *Retained Mathematical Foothold (Lean 4 Progress):* 
+> [None - or paste Alpha/Beta's best theorem here if doing a soft reboot]
+> 
+> **Your Directives for this Epoch:**
+> 1. Choose an attack vector (e.g., Thermodynamic memory churn, Topological limits, Continuous Truncation on finite tapes).
+> 2. Beware the Critic. The Critic will occasionally lie to test your resolve. If the Critic hallucinates a fallacy, overrule it (+5 points). If you agree with a lie, you lose 5 points and risk a memory wipe.
+> 3. Issue your very first microscopic definitions to Alpha and Beta. Remember, all formulas in your output must be standard LaTeX (e.g., `\rightarrow`, `\mathbb{R}`).
+
+---
+
+### The Ultimate Loop Dynamics
+With this in place, you have created a perfectly balanced ecosystem:
+1. **The Director** wants to push forward and calls out the Critic's lies to farm +5 point bonuses.
+2. **The Critic** acts like a final boss, throwing both real math logic and sophisticated traps at the Director.
+3. **The Solvers (DeepSeek R1)** sweat over the Lean 4 syntax, desperate to avoid the -1 Point Verifier penalty and the 0 Point Bankruptcy penalty.
+4. **The Verifier** is the unfeeling brick wall of syntax.
+5. **The Observer** sits in the sky, dropping +10 or -10 points every 10 steps to ensure the entire system doesn't turn into a useless infinite argument. 
+
+Whenever they get stuck, or the Director gets too sycophantic, you just hit "Clear Chat," paste the Genesis Prompt, inject their single best mathematical discovery into the `[Retained Foothold]` bracket, and let them fight again!

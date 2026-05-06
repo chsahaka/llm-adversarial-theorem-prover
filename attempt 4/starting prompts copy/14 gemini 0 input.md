@@ -1,0 +1,1 @@
+jsons for the verifier and solvers?

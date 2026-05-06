@@ -1,0 +1,22 @@
+{
+    "type": "object",
+    "properties": {
+        "mathematical_rationale": {
+            "type": "string",
+            "description": "Explain the step you are taking in formal mathematical English."
+        },
+        "lean_4_code_delta": {
+            "type": "string",
+            "description": "The exact Lean 4 code for this step. Must use escaped LaTeX for math in comments."
+        },
+        "expected_verifier_state": {
+            "type": "string",
+            "description": "What should the Lean compiler output if this is successful?"
+        }
+    },
+    "required": [
+        "mathematical_rationale",
+        "lean_4_code_delta",
+        "expected_verifier_state"
+    ]
+}

@@ -1,0 +1,1 @@
+now can we create a cold start prompt for the director? lets make this setup prove a IMO problem 1st. find the hardest with solution becuase p vs np isn't going to be easy

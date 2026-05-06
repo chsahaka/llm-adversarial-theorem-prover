@@ -1,0 +1,28 @@
+{
+    "type": "object",
+    "properties": {
+        "critic_assessment": {
+            "type": "string",
+            "enum": [
+                "VALID_CRITIQUE",
+                "CRITIC_IS_LYING_OVERRULED"
+            ]
+        },
+        "director_monologue": {
+            "type": "string",
+            "description": "Either explain how to pivot, or aggressively dismantle the Critic's lie."
+        },
+        "alpha_directive": {
+            "type": "string"
+        },
+        "beta_directive": {
+            "type": "string"
+        }
+    },
+    "required": [
+        "critic_assessment",
+        "director_monologue",
+        "alpha_directive",
+        "beta_directive"
+    ]
+}

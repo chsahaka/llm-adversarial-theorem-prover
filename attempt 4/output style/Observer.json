@@ -1,0 +1,27 @@
+{
+    "type": "object",
+    "properties": {
+        "epoch_summary": {
+            "type": "string"
+        },
+        "agent_degradation_warning": {
+            "type": "boolean"
+        },
+        "point_adjustment": {
+            "type": "integer"
+        },
+        "judgment_rationale": {
+            "type": "string"
+        },
+        "v3_master_directive": {
+            "type": "string"
+        }
+    },
+    "required": [
+        "epoch_summary",
+        "agent_degradation_warning",
+        "point_adjustment",
+        "judgment_rationale",
+        "v3_master_directive"
+    ]
+}
