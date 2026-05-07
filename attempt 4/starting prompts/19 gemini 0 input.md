@@ -1,0 +1,1 @@
+![Input image](starting-prompts/image2.png)

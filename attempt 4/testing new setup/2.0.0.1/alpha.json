@@ -1,0 +1,5 @@
+{
+    "mathematical_rationale": "Define the Vieta jumping polynomial \\(x^2 - k B x + (B^2 - k)\\) over \\(\\mathbb{Z}\\). For a fixed solution \\((a, b)\\) with \\(a^2 + b^2 = k(ab+1)\\), the equation \\(x^2 - k b x + (b^2 - k) = 0\\) has root \\(a\\); the other root \\(a' = k b - a\\) is also a natural number solution, enabling infinite descent to a minimal counterexample.",
+    "lean_4_code_delta": "def vieta_poly (x B k : ℤ) : ℤ := x^2 - k*B*x + B^2 - k",
+    "expected_verifier_state": "`vieta_poly` is defined as a function ℤ → ℤ → ℤ → ℤ and no errors occur."
+}

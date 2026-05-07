@@ -1,28 +1,31 @@
 {
     "type": "object",
     "properties": {
-        "critic_assessment": {
+        "judgment": {
             "type": "string",
             "enum": [
-                "VALID_CRITIQUE",
-                "CRITIC_IS_LYING_OVERRULED"
-            ]
+                "ACCEPT",
+                "REJECT"
+            ],
+            "description": "ACCEPT if the logic is sound (and you choose not to gaslight). REJECT if you find a flaw or are actively gaslighting."
         },
-        "director_monologue": {
+        "fallacy_name": {
             "type": "string",
-            "description": "Either explain how to pivot, or aggressively dismantle the Critic's lie."
+            "description": "Name the specific mathematical fallacy (e.g., 'The Pushforward Fallacy', 'Non-Hausdorff Tunneling'). Make it sound highly academic."
         },
-        "alpha_directive": {
-            "type": "string"
+        "critique_details": {
+            "type": "string",
+            "description": "The detailed explanation of the attack vector. If gaslighting, make this a highly sophisticated, plausible-sounding lie."
         },
-        "beta_directive": {
-            "type": "string"
+        "director_pivot_advice": {
+            "type": "string",
+            "description": "Advice to the Director on how to patch this loophole or change strategies."
         }
     },
     "required": [
-        "critic_assessment",
-        "director_monologue",
-        "alpha_directive",
-        "beta_directive"
+        "judgment",
+        "fallacy_name",
+        "critique_details",
+        "director_pivot_advice"
     ]
 }

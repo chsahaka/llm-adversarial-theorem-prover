@@ -1,0 +1,1 @@
+wait why didn't we have a string from the director to the crtic for the critc to verify and then into the alpha and beta
