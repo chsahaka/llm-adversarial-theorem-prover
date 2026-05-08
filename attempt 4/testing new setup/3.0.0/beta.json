@@ -1,0 +1,5 @@
+{
+    "mathematical_rationale": "We define the concept of a minimal pair to include the ordering \\( A \\ge B \\) without loss of generality. Since the sum is symmetric, if a minimal pair had \\( A < B \\), swapping yields another minimal pair. We therefore build the ordering into the predicate `is_minimal_pair` to streamline the infinite descent. The lemma `wlog_A_ge_B` simply extracts the third component.",
+    "lean_4_code_delta": "def is_minimal_pair (A B k : ℕ) : Prop :=\n  is_valid_pair A B k ∧ (∀ a b : ℕ, is_valid_pair a b k → A + B ≤ a + b) ∧ A ≥ B\n\nlemma wlog_A_ge_B (A B k : ℕ) (h_min : is_minimal_pair A B k) : A ≥ B :=\n  h_min.2.2",
+    "expected_verifier_state": "Compilation successful. Both the definition and the lemma are accepted."
+}

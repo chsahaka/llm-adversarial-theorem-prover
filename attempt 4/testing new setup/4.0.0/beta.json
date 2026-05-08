@@ -1,0 +1,5 @@
+{
+    "mathematical_rationale": "We define the integer \\( A' = k B - A \\) to transition into the descent step, where \\( (A')^2 = k (A - B)^2 \\) will hold. Working in \\(\\mathbb{Z}\\) simplifies the algebra.",
+    "lean_4_code_delta": "def A_prime (A B k : ℕ) : ℤ := (k * B : ℤ) - (A : ℤ)",
+    "expected_verifier_state": "Compilation successful. The definition A_prime is added to the environment."
+}

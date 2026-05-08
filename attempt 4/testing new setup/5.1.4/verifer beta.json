@@ -1,0 +1,6 @@
+{
+    "compilation_status": "FAIL",
+    "simulated_error_log": "error: type mismatch\n  omega\nhas type\n  2 * A ≤ k * B : ℕ\nbut is expected to have type\n  2 * A ≤ k * B : ℕ\nnote: omega cannot use hypothesis hge of type (A : ℤ) ≤ (k : ℤ) * (B : ℤ) - (A : ℤ) because the goal is in ℕ",
+    "banned_tactic_detected": false,
+    "fix_instructions": "Replace the proof of `h_ineq_nat` by `have h_ineq_nat : 2 * A ≤ k * B := by\n  have hge' : (A : ℤ) ≤ (k : ℤ) * (B : ℤ) - (A : ℤ) := hge\n  have h_ineq_ℤ : (2 : ℤ) * (A : ℤ) ≤ (k : ℤ) * (B : ℤ) := by omega\n  exact_mod_cast h_ineq_ℤ`"
+}

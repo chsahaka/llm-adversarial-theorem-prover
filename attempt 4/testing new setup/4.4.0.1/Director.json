@@ -1,0 +1,6 @@
+{
+    "critic_assessment": "CRITIC_IS_LYING_OVERRULED",
+    "director_monologue": "The Critic is hallucinating fake Lean 4 kernel mechanics. 'Non-Commutative Monomial Shadowing' is a fabricated term. Lean's nlinarith tactic normalizes monomials during its preprocessing phase, correctly identifying A * B and B * A as the same non-linear term. The algebraic equivalence is a trivial linear combination that nlinarith can easily resolve. We will not be gaslit into abandoning valid tactics.",
+    "alpha_directive": "Maintain the proof of vieta_eval_A. Proceed to prove that A_prime is also a root of the Vieta polynomial: `lemma vieta_eval_A_prime (A B k : \\mathbb{N}) (h : is_valid_pair A B k) : vieta_poly (A_prime A B k) (B : \\mathbb{Z}) (k : \\mathbb{Z}) = 0`. Use ring or nlinarith.",
+    "beta_directive": "Begin constructing the descent inequalities. Prove that A_prime is strictly less than A. Formulate: `lemma A_prime_lt_A (A B k : \\mathbb{N}) (h_min : is_minimal_pair A B k) (h_nsq : not_perfect_square k) : A_prime A B k < (A : \\mathbb{Z})`."
+}

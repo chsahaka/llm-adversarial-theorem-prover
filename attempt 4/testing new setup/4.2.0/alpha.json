@@ -1,0 +1,5 @@
+{
+    "mathematical_rationale": "First provide the missing Vieta polynomial definition, then restate the lemma `vieta_eval_A` using `exact_mod_cast` and `nlinarith`. This ensures all identifiers are in scope.",
+    "lean_4_code_delta": "def vieta_poly (x B k : ℤ) : ℤ := x^2 - k*B*x + B^2 - k\n\nlemma vieta_eval_A (A B k : ℕ) (h : is_valid_pair A B k) : vieta_poly (A : ℤ) (B : ℤ) (k : ℤ) = 0 := by\n  have hz : (A : ℤ)^2 + (B : ℤ)^2 = (k : ℤ) * ((A : ℤ) * (B : ℤ) + 1) := by exact_mod_cast h\n  unfold vieta_poly\n  nlinarith",
+    "expected_verifier_state": "The definition `vieta_poly` and lemma `vieta_eval_A` compile successfully."
+}

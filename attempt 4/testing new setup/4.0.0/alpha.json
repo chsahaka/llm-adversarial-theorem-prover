@@ -1,0 +1,5 @@
+{
+    "mathematical_rationale": "From the hypothesis `is_valid_pair A B k`, i.e., \\(A^2 + B^2 = k(AB+1)\\) in \\(\\mathbb{N}\\), we lift to \\(\\mathbb{Z}\\) and compute `vieta_poly A B k = A^2 - k B A + B^2 - k = (A^2 + B^2) - k(AB+1) = 0`.",
+    "lean_4_code_delta": "lemma vieta_eval_A (A B k : ℕ) (h : is_valid_pair A B k) : vieta_poly (A : ℤ) (B : ℤ) (k : ℤ) = 0 := by\n  have hz : (A : ℤ)^2 + (B : ℤ)^2 = (k : ℤ) * ((A : ℤ) * (B : ℤ) + 1) := by exact_mod_cast h\n  unfold vieta_poly\n  nlinarith",
+    "expected_verifier_state": "`vieta_eval_A` compiles; the goal is proved."
+}

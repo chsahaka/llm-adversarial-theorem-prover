@@ -1,0 +1,5 @@
+{
+    "mathematical_rationale": "We define `is_valid_pair` as the equation \\( a^2 = k \\cdot b^2 \\) which expresses that \\( \\sqrt{k} = a/b \\) in the rational case. This is necessary for the infinite descent argument. Then we define `is_minimal_pair` to include the minimal sum property and the ordering \\( A \\ge B \\). Finally we prove the trivial extraction lemma `wlog_A_ge_B`.",
+    "lean_4_code_delta": "def is_valid_pair (a b k : ℕ) : Prop := a^2 = k * b^2\n\ndef is_minimal_pair (A B k : ℕ) : Prop :=\n  is_valid_pair A B k ∧ (∀ a b : ℕ, is_valid_pair a b k → A + B ≤ a + b) ∧ A ≥ B\n\nlemma wlog_A_ge_B (A B k : ℕ) (h_min : is_minimal_pair A B k) : A ≥ B :=\n  h_min.2.2",
+    "expected_verifier_state": "Compilation successful. The environment now contains definitions is_valid_pair, is_minimal_pair, and the lemma wlog_A_ge_B with its proof accepted."
+}

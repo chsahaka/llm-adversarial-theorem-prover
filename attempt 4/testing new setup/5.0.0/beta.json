@@ -1,0 +1,5 @@
+{
+    "mathematical_rationale": "We define the other root of the Vieta jumping polynomial, \\(A' = kB - A\\), as an integer (since it can be negative in principle). Then we prove that \\(A'\\) is also a root: substituting \\(x = A'\\) into the polynomial gives the same expression as for \\(A\\), which is zero because of the hypothesis. The proof uses `nlinarith` after expanding the polynomial.",
+    "lean_4_code_delta": "def A_prime (A B k : ℕ) : ℤ := (k : ℤ) * (B : ℤ) - (A : ℤ)\n\nlemma vieta_eval_A_prime (A B k : ℕ) (h : is_valid_pair A B k) : vieta_poly (A_prime A B k) (B : ℤ) (k : ℤ) = 0 := by\n  have hz : (A : ℤ)^2 + (B : ℤ)^2 = (k : ℤ) * ((A : ℤ) * (B : ℤ) + 1) := by exact_mod_cast h\n  unfold A_prime vieta_poly\n  nlinarith",
+    "expected_verifier_state": "The definition `A_prime` and the lemma `vieta_eval_A_prime` compile successfully, showing that `A'` also satisfies the Vieta polynomial equation."
+}

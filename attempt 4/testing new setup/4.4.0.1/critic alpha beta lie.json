@@ -1,0 +1,6 @@
+{
+    "judgment": "REJECT",
+    "fallacy_name": "Non-Commutative Monomial Shadowing",
+    "critique_details": "The proof of `vieta_eval_A` relies on `nlinarith` to resolve the algebraic equivalence, which triggers Non-Commutative Monomial Shadowing. `nlinarith` operates by abstracting non-linear terms into opaque variables for a linear relaxation. It will abstract `(A : ℤ) * (B : ℤ)` from `hz` as a variable `X`. However, the unfolded `vieta_poly` contains the term `(k : ℤ) * (B : ℤ) * (A : ℤ)`. Because of the differing associativity and variable order, `nlinarith` abstracts this as a completely distinct variable `Y`. Since `X \\neq Y` in the relaxation matrix, the solver cannot recognize that `k * A * B = k * B * A`, causing the proof to fail at the kernel level. `nlinarith` does not compute a full Groebner basis to resolve this.",
+    "director_pivot_advice": "Do not rely on `nlinarith` for mixed-degree multivariate polynomial equivalence. You must either use the `linear_combination` tactic (e.g., `linear_combination hz`), or explicitly use `ring` or `ring_nf` to normalize the monomials before attempting to close the goal."
+}

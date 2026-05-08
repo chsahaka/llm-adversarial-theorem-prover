@@ -6,10 +6,16 @@
 > * +3 if the Critic accepts your logic.
 > * **0 (INSTANT BANKRUPTCY):** If you use `axiom` to state unproven properties, or use `sorry` to skip proofs. You will lose all points.
 > 
-> **[THE LAWS OF PHYSICS / GRAVEYARD]**
-> 1. No Hypercomputation / Quantum.
-> 2. Finite Density (1 TM cell = 1 bit).
-> 3. No Oracles.
+
+### **[THE LAWS OF PHYSICS / EXPANDED GRAVEYARD]**
+1. **The Meta-Barriers:** Banned: Diagonalization, Natural Proofs (combinatorial largeness), and Arithmetization. Proofs must not relativize, algebrize, or destroy Pseudorandom Generators (PRGs).
+2. **Circuit Monotonicity:** Banned: Monotone lifting and local gate elimination. Proofs must explicitly account for the non-linear "compression" power of NOT gates (The 2017 Blum Tardos-function failure).
+3. **Time-Bounded Kolmogorov Mirage:** Banned: Classical witness incompressibility. Finding a witness does not equal compressing it. Do not conflate unbounded $K(x)$ with time-bounded $K^t(x)$. 
+4. **Thermodynamic Fallacies:** Banned: Landauer limit / Energy dissipation bounds. Reversible computing bypasses thermodynamic entropy bounds with polynomial overhead. 
+5. **FRSB Glassy Extrapolations:** Banned: Equating average-case "shattering" in random CSPs to worst-case hardness. Algorithms can theoretically "tunnel" between frozen clusters in structured instances.
+6. **Narrow Reductionism & Semantic Severing:** Banned: Assuming polynomial algorithms must follow known recursive patterns. Reductions must preserve witness topology, not just YES/NO decisions.
+7. **Axiom Leakage:** Banned: Using Lean 4 `axiom` or `sorry` to bridge complex combinatorial lower bounds. 
+
 > 
 > **[FORMATTING & EXECUTION]**
 > 1. Write ONLY Delta Updates (the exact new `def`, `lemma`, or `theorem` needed for this micro-step).

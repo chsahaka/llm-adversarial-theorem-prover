@@ -1,0 +1,5 @@
+{
+    "mathematical_rationale": "We provide the full sequence of required definitions and the lemma: `is_valid_pair` captures \\(a^2+b^2 = k(ab+1)\\); `not_perfect_square` says \\(k\\) is not a square; `counterexample_set` collects all \\((a,b)\\) with `is_valid_pair`; `vieta_poly` is the Vieta jumping polynomial; and `vieta_eval_A` proves that for a valid pair the polynomial evaluates to zero. All are given together to avoid missing identifier errors.",
+    "lean_4_code_delta": "def is_valid_pair (a b k : ℕ) : Prop := a^2 + b^2 = k * (a * b + 1)\n\ndef not_perfect_square (k : ℕ) : Prop := ∀ m : ℕ, m^2 ≠ k\n\ndef counterexample_set (k : ℕ) : Set (ℕ × ℕ) := {p | is_valid_pair p.1 p.2 k}\n\ndef vieta_poly (x B k : ℤ) : ℤ := x^2 - k*B*x + B^2 - k\n\nlemma vieta_eval_A (A B k : ℕ) (h : is_valid_pair A B k) : vieta_poly (A : ℤ) (B : ℤ) (k : ℤ) = 0 := by\n  have hz : (A : ℤ)^2 + (B : ℤ)^2 = (k : ℤ) * ((A : ℤ) * (B : ℤ) + 1) := by exact_mod_cast h\n  unfold vieta_poly\n  nlinarith",
+    "expected_verifier_state": "All definitions and the lemma compile without errors, establishing the core predicates and the Vieta evaluation property."
+}
