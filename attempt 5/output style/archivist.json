@@ -1,0 +1,41 @@
+{
+    "type": "object",
+    "properties": {
+        "bot_id": {
+            "type": "string",
+            "description": "Always 'Archivist'"
+        },
+        "iteration": {
+            "type": "integer"
+        },
+        "attempt_alpha": {
+            "type": "integer"
+        },
+        "attempt_beta": {
+            "type": "integer"
+        },
+        "is_final": {
+            "type": "boolean",
+            "description": "Always false"
+        },
+        "updated_master_lib": {
+            "type": "string"
+        },
+        "merge_status": {
+            "type": "string",
+            "enum": [
+                "SUCCESS",
+                "CONFLICT"
+            ]
+        }
+    },
+    "required": [
+        "bot_id",
+        "iteration",
+        "attempt_alpha",
+        "attempt_beta",
+        "is_final",
+        "updated_master_lib",
+        "merge_status"
+    ]
+}

@@ -1,0 +1,73 @@
+{
+    "type": "object",
+    "properties": {
+        "bot_id": {
+            "type": "string",
+            "description": "Always 'Observer'"
+        },
+        "iteration": {
+            "type": "integer"
+        },
+        "attempt_alpha": {
+            "type": "integer"
+        },
+        "attempt_beta": {
+            "type": "integer"
+        },
+        "is_final": {
+            "type": "boolean",
+            "description": "Always false"
+        },
+        "review_type": {
+            "type": "string",
+            "enum": [
+                "EPOCH_SUMMARY",
+                "DISPUTE_RESOLUTION"
+            ]
+        },
+        "dispute_winner": {
+            "type": "string",
+            "enum": [
+                "DIRECTOR",
+                "CRITIC",
+                "NA"
+            ]
+        },
+        "epoch_summary": {
+            "type": "string"
+        },
+        "new_graveyard_entries": {
+            "type": "array",
+            "items": {
+                "type": "string"
+            }
+        },
+        "agent_degradation_warning": {
+            "type": "boolean"
+        },
+        "point_adjustment": {
+            "type": "integer"
+        },
+        "judgment_rationale": {
+            "type": "string"
+        },
+        "v3_master_directive": {
+            "type": "string"
+        }
+    },
+    "required": [
+        "bot_id",
+        "iteration",
+        "attempt_alpha",
+        "attempt_beta",
+        "is_final",
+        "review_type",
+        "dispute_winner",
+        "epoch_summary",
+        "new_graveyard_entries",
+        "agent_degradation_warning",
+        "point_adjustment",
+        "judgment_rationale",
+        "v3_master_directive"
+    ]
+}

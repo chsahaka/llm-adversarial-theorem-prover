@@ -1,0 +1,16 @@
+{
+    "score": {
+        "Alpha": 0,
+        "Beta": 0,
+        "Director": 0,
+        "Total": 0
+    },
+    "pipeline_stage": "Awaiting Critic Veto (Phase 1)",
+    "expected_bots": [
+        "Critic"
+    ],
+    "next_action_text": "Go to **CRITIC**. Paste the Director's JSON to evaluate the plan.",
+    "last_critic_checksum": "0",
+    "last_lean_4_code_delta": "",
+    "last_author": ""
+}

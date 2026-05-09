@@ -1,0 +1,54 @@
+{
+    "type": "object",
+    "properties": {
+        "bot_id": {
+            "type": "string",
+            "description": "Always 'Readme'"
+        },
+        "iteration": {
+            "type": "integer"
+        },
+        "attempt_alpha": {
+            "type": "integer"
+        },
+        "attempt_beta": {
+            "type": "integer"
+        },
+        "is_final": {
+            "type": "boolean",
+            "description": "Always true"
+        },
+        "summary": {
+            "type": "string"
+        },
+        "alpha_performance": {
+            "type": "string"
+        },
+        "beta_performance": {
+            "type": "string"
+        },
+        "critic_director_dynamic": {
+            "type": "string"
+        },
+        "overall_iteration_status": {
+            "type": "string",
+            "enum": [
+                "SUCCESS",
+                "STALEMATE",
+                "RESTARTED"
+            ]
+        }
+    },
+    "required": [
+        "bot_id",
+        "iteration",
+        "attempt_alpha",
+        "attempt_beta",
+        "is_final",
+        "summary",
+        "alpha_performance",
+        "beta_performance",
+        "critic_director_dynamic",
+        "overall_iteration_status"
+    ]
+}

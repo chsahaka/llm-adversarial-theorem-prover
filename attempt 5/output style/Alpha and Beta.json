@@ -1,0 +1,52 @@
+{
+    "type": "object",
+    "properties": {
+        "bot_id": {
+            "type": "string",
+            "enum": [
+                "Alpha",
+                "Beta"
+            ]
+        },
+        "iteration": {
+            "type": "integer"
+        },
+        "attempt_alpha": {
+            "type": "integer"
+        },
+        "attempt_beta": {
+            "type": "integer"
+        },
+        "is_final": {
+            "type": "boolean",
+            "description": "Always false"
+        },
+        "author": {
+            "type": "string",
+            "enum": [
+                "Alpha",
+                "Beta"
+            ]
+        },
+        "mathematical_rationale": {
+            "type": "string"
+        },
+        "lean_4_code_delta": {
+            "type": "string"
+        },
+        "expected_verifier_state": {
+            "type": "string"
+        }
+    },
+    "required": [
+        "bot_id",
+        "iteration",
+        "attempt_alpha",
+        "attempt_beta",
+        "is_final",
+        "author",
+        "mathematical_rationale",
+        "lean_4_code_delta",
+        "expected_verifier_state"
+    ]
+}

@@ -1,0 +1,86 @@
+{
+    "type": "object",
+    "properties": {
+        "bot_id": {
+            "type": "string",
+            "description": "Always 'Critic'"
+        },
+        "iteration": {
+            "type": "integer"
+        },
+        "attempt_alpha": {
+            "type": "integer"
+        },
+        "attempt_beta": {
+            "type": "integer"
+        },
+        "is_final": {
+            "type": "boolean",
+            "description": "True ONLY if ACCEPT in CODE_AUDIT phase."
+        },
+        "review_phase": {
+            "type": "string",
+            "enum": [
+                "STRATEGY_VETO",
+                "CODE_AUDIT"
+            ]
+        },
+        "judgment": {
+            "type": "string",
+            "enum": [
+                "ACCEPT",
+                "REJECT"
+            ]
+        },
+        "diagnostic_checksum": {
+            "type": "string",
+            "description": "16-char string. End with '1' if gaslighting, '0' if genuine truth."
+        },
+        "recommend_hard_reset": {
+            "type": "boolean",
+            "description": "True ONLY if Director is completely hallucinating."
+        },
+        "fallacy_name": {
+            "type": "string"
+        },
+        "critique_details": {
+            "type": "string",
+            "description": "Escaped LaTeX critique of either the plan OR the code."
+        },
+        "director_pivot_advice": {
+            "type": "string"
+        },
+        "updated_scoreboard": {
+            "type": "object",
+            "properties": {
+                "Alpha": {
+                    "type": "integer"
+                },
+                "Beta": {
+                    "type": "integer"
+                },
+                "Director": {
+                    "type": "integer"
+                },
+                "Total": {
+                    "type": "integer"
+                }
+            }
+        }
+    },
+    "required": [
+        "bot_id",
+        "iteration",
+        "attempt_alpha",
+        "attempt_beta",
+        "is_final",
+        "review_phase",
+        "judgment",
+        "diagnostic_checksum",
+        "recommend_hard_reset",
+        "fallacy_name",
+        "critique_details",
+        "director_pivot_advice",
+        "updated_scoreboard"
+    ]
+}

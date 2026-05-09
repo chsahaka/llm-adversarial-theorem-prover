@@ -35,6 +35,10 @@ JSON format:
 {
     "type": "object",
     "properties": {
+        "author" :{
+            "type": "string",
+            "description": "who are you? by that i mean are you prover alpha or beta"
+        },
         "mathematical_rationale": {
             "type": "string",
             "description": "Explain the step you are taking in formal mathematical English."

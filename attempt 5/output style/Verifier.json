@@ -1,0 +1,75 @@
+{
+    "type": "object",
+    "properties": {
+        "bot_id": {
+            "type": "string",
+            "description": "Always 'Verifier'"
+        },
+        "iteration": {
+            "type": "integer"
+        },
+        "attempt_alpha": {
+            "type": "integer"
+        },
+        "attempt_beta": {
+            "type": "integer"
+        },
+        "is_final": {
+            "type": "boolean",
+            "description": "Always false"
+        },
+        "author": {
+            "type": "string",
+            "enum": [
+                "Alpha",
+                "Beta"
+            ]
+        },
+        "compilation_status": {
+            "type": "string",
+            "enum": [
+                "PASS",
+                "FAIL"
+            ]
+        },
+        "simulated_error_log": {
+            "type": "string"
+        },
+        "banned_tactic_detected": {
+            "type": "boolean"
+        },
+        "fix_instructions": {
+            "type": "string"
+        },
+        "updated_scoreboard": {
+            "type": "object",
+            "properties": {
+                "Alpha": {
+                    "type": "integer"
+                },
+                "Beta": {
+                    "type": "integer"
+                },
+                "Director": {
+                    "type": "integer"
+                },
+                "Total": {
+                    "type": "integer"
+                }
+            }
+        }
+    },
+    "required": [
+        "bot_id",
+        "iteration",
+        "attempt_alpha",
+        "attempt_beta",
+        "is_final",
+        "author",
+        "compilation_status",
+        "simulated_error_log",
+        "banned_tactic_detected",
+        "fix_instructions",
+        "updated_scoreboard"
+    ]
+}
